@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html ng-app="rocketboardApp">
+<head>
+<title>Rocketboard</title>
+<link rel="stylesheet" href="/vendor/bootstrap/dist/css/bootstrap.css" />
+<link rel="stylesheet" href="/stylesheets/style.css">
+<script type="text/javascript" src='/vendor/lodash/dist/lodash.js'></script>
+<script type="text/javascript" src='/vendor/jquery/dist/jquery.js'></script>
+<script type="text/javascript" src='/vendor/bootstrap/dist/js/bootstrap.js'></script>
+<script type="text/javascript" src='/vendor/angular/angular.js'></script>
+<script type="text/javascript" src='/js/controllers.js'></script>
+</head>
+<body>
+    <h1>Rocketboard</h1>
+    <div class="table-responsive" ng-controller="UserController as userCtrl">
+        <table class="table">
+            <thead> 
+                <tr>
+                    <th>Rank</th>
+                    <th>Player</th>
+                    <th>Points</th>
+                    <th></th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr ng-repeat="user in userCtrl.users | orderBy: '-score'">
+                    <td>{{$index +1 }}</td> 
+                    <td>{{user.member}}</td>
+                    <td>{{user.score}}</td>
+                    <td><a href="" ng-click="userCtrl.addPoint(user)">Win</a></td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+    
+</body>
+</html>
+

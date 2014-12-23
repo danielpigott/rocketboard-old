@@ -26,7 +26,7 @@ router.post('/:username/updatescore', function(req, res) {
     });
 });
 
-router.delete('/', function(req, res) {
+router.delete('/:username', function(req, res) {
     board.rm(req.param('username'), function(err) {
         res.send('ok');
     });

@@ -27,7 +27,9 @@
                     <td>{{$index +1 }}</td> 
                     <td>{{user.member}}</td>
                     <td>{{user.score}}</td>
-                    <td><a href="" ng-click="userCtrl.addPoint(user)">Win</a></td>
+                    <td><a href="" ng-click="userCtrl.addPoint(user)">Win</a>
+                        <a href="" ng-click="userCtrl.deleteUser(user)">Delete User</a>
+                    </td>
                 </tr>
             </tbody>
         </table>

@@ -12,7 +12,7 @@
 </head>
 <body>
     <h1>Rocketboard</h1>
-    <div class="table-responsive" ng-controller="UserController as userCtrl">
+    <div class="table-responsive" ng-controller="UserController as userCtrl" style="overflow:visible">
         <table class="table">
             <thead> 
                 <tr>
@@ -27,8 +27,21 @@
                     <td>{{$index +1 }}</td> 
                     <td>{{user.member}}</td>
                     <td>{{user.score}}</td>
-                    <td><a href="" ng-click="userCtrl.addPoint(user)">Win</a>
-                        <a href="" ng-click="userCtrl.deleteUser(user)">Delete User</a>
+                    <td>
+                        <div class="btn-group" role="group">
+                        <a class="btn btn-success" href="" ng-click="userCtrl.addPoint(user)">
+                            <span class="glyphicon glyphicon-plus" aria-hidden="true"></span> Win
+                        </a>
+                        <div class="btn-group" role="group">
+                        <button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu{{$index}}" data-toggle="dropdown" aria-expanded="true">
+                           Actions 
+                            <span class="caret"></span>
+                        </button>
+                        <ul class="dropdown-menu" role="menu" aria-labelledby="dropdownMenu{{$index}}">
+                            <li><a href="" ng-click="userCtrl.deleteUser(user)">Delete User</a></li>
+                        </ul>
+                        </div>
+                        </div>
                     </td>
                 </tr>
             </tbody>

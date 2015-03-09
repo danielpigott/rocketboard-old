@@ -1,7 +1,7 @@
 var express = require('express');
 var router = express.Router();
-var Leaderboard = new require('leaderboard');
-var board = new Leaderboard('rocketboard');
+var Rocketboard = new require('../lib/rocketboard');
+var board = new Rocketboard('rocketboard');
 
 router.param('username', function(req, res, next, id){
     req.username = id;
